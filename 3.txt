@@ -1,0 +1,29 @@
+import math
+a = float(input("введите a: "))
+b = float(input("введите b: "))
+c = float(input("введите c: "))
+x0 = int(input("введите x0: "))
+x1 = int(input("введите x1: "))
+dx = int(input("введите шаг: "))
+q = int(a)
+w = int(b)
+e = int(c)
+ABC = (q | w) ^ (w & e)
+
+for x in range(x0, x1 + dx, dx):
+    if  x - 1 < 0 and b - x != 0:
+        f = a * x * x + b
+    elif x-1 > 0 and b + x == 0:
+        f = (x - a) / x
+    elif c != 0:
+        f = x / c
+    else:
+        f = -12345678
+
+    if ABC != 0:
+        print(f"x={x} f={f}")
+    else:
+        int_f = int(f)
+        print(f"x={x} f={int_f}")
+
+        

@@ -1,0 +1,22 @@
+n = int(input("Введите порядок: "))
+f = sum(range(n + 1))
+
+import random
+a = [random.randint(1, 100) if random.randint(0, 1) else 1 for _ in range(f)]
+
+for i in a:
+    print(i, end=" ")
+print("\n")
+
+y = 0
+b = [[0] * n for _ in range(n)]
+
+for i in range(n):
+    for j in range(i, n):
+        b[i][j] = a[y]
+        y += 1
+
+for row in b:
+    for val in row:
+        print(val, end="\t ")
+    print()
